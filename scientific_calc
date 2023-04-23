@@ -1,0 +1,46 @@
+import math
+
+print("Python Scientific Calculator")
+
+while True:
+    print("Enter 'quit' to exit the program.")
+    operation = input("Enter a math operation (+, -, *, /, sin, cos, tan, log, sqrt): ")
+
+    if operation == 'quit':
+        print("Exiting the program...")
+        break
+
+    if operation not in ['+', '-', '*', '/', 'sin', 'cos', 'tan', 'log', 'sqrt']:
+        print("Invalid operation entered. Please try again.")
+        continue
+
+    if operation in ['+', '-', '*', '/']:
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+
+        if operation == '+':
+            print(num1, "+", num2, "=", (num1 + num2))
+        elif operation == '-':
+            print(num1, "-", num2, "=", (num1 - num2))
+        elif operation == '*':
+            print(num1, "*", num2, "=", (num1 * num2))
+        elif operation == '/':
+            if num2 == 0:
+                print("Division by zero is not allowed")
+            else:
+                print(num1, "/", num2, "=", (num1 / num2))
+
+    else:
+        num = float(input("Enter a number: "))
+
+        if operation == 'sin':
+            print("sin(", num, ")=", math.sin(num))
+        elif operation == 'cos':
+            print("cos(", num, ")=", math.cos(num))
+        elif operation == 'tan':
+            print("tan(", num, ")=", math.tan(num))
+        elif operation == 'log':
+            print("log(", num, ")=", math.log(num))
+        elif operation == 'sqrt':
+            print("sqrt(", num, ")=", math.sqrt(num))
+
